@@ -1,0 +1,88 @@
+{% extends "nav.html" %}
+
+{% block content %}
+
+<head>
+  <meta charset="utf-8" />
+  <title>{{ title }}</title>
+  <link rel="icon" href="data:,">
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js'></script>
+  <style>
+      p{
+          text-align: left;
+      }
+      .container{
+          width: 1600px;
+      }
+  </style>
+</head>
+
+<body>
+  <br>
+  <br>
+  <center>
+      <p>{{ data }}</p>
+    <div class="container">
+        <div class="d-flex justify-content-center h-100">
+          <div class="card" style="width: 1600px;">
+            <div class="card-header">
+              <h3>Sign In</h3>
+            </div>
+            <div class="card-body">
+              <form action = "/signup" method="post">
+
+                <p>ID Number</p>
+                <div class="input-group form-group">
+                  <div class="input-group-prepend">
+                  </div>
+                  <input type="text" class="form-control" placeholder="Roll No." name="id">
+                </div>
+
+                <p>Username</p>
+                <div class="input-group form-group">
+                  <div class="input-group-prepend">
+                  </div>
+                  <input type="text" class="form-control" placeholder="Full Name" name="username">
+                </div>
+
+                <p>E-Mail ID</p>
+                <div class="input-group form-group">
+                  <div class="input-group-prepend">
+                  </div>
+                  <input type="text" class="form-control" placeholder="" name="email">
+                </div>
+
+                <p>Password</p>
+                <div class="input-group form-group">
+                  <div class="input-group-prepend">
+                  </div>
+                  <input type="password" class="form-control" placeholder="password" name="password">
+                </div>
+
+                <p>Access Control</p>
+                <div class="input-group form-group">
+                  <div class="input-group-prepend">
+                     
+                  </div>
+                  <input type="text" class="form-control" placeholder="Access Level" name="access">
+                </div>
+
+                <p>Department</p>
+                <div class="input-group form-group">
+                  <div class="input-group-prepend">
+                     
+                  </div>
+                  <input type="text" class="form-control" placeholder="" name="dept">
+                </div>
+
+                <div class="form-group">
+                  <input type="submit" value="Submit" class="btn login_btn">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+  </center>
+</body>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "nav.html" %}
+
+{% block content %}
+  <head>
+    <style>
+      h1{
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <br>
+    <br>
+    <h1>Live Stream Mark Exit</h1>
+    <center>
+      <img src="{{ url_for('video_feed_exit') }}">
+    </center>
+  </body>
+</html>
+
+{% endblock %}

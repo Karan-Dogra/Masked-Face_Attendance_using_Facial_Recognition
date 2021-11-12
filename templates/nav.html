@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        
+        <title>Masked Face Attendance</title>
+
+        <style type="text/css" rel="stylesheet" >
+           .content{
+             margin-top: 100px;
+           }
+        </style>
+      </head>
+
+      <body>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand" href="#">
+                <img src="static/logo.jpg" width="40" height="40" class="d-inline-block align-top" alt="">Masked Face Attendance</a>
+          <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="navbar-collapse collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item dropdown ">
+                <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Trends</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="{{ url_for('dashboard') }}">Daily Attendance</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="{{ url_for('month') }}">Monthly Attendance</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="{{ url_for('studgraph') }}">Total Attendance</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="{{ url_for('violate') }}">Violations</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown ">
+                <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Statistics</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="{{ url_for('userList') }}">List of users</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="{{ url_for('dailylogs') }}">Daily Logs</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="{{ url_for('totalatt') }}">Total Attendance</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="{{ url_for('entexit') }}">Entry-Exit Times</a>
+                </div>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="{{ url_for('livecam_enter') }}">Mark Entery</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="{{ url_for('livecam_exit') }}">Mark Exit</a>
+              </li>
+            </ul>
+            
+            <div class="container">
+              <div class="collapse navbar-collapse justify-content-end" id="navigation">
+                  
+                  <ul class="navbar-nav ml-auto">
+                      <li class="nav-item">
+                          <a class="nav-link" href="{{ url_for('logout') }}">
+                              <span class="no-icon">Log out</span>
+                          </a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+          </div>
+        </nav>
+
+        <div class="main-panel">
+          <nav class="navbar navbar-expand-lg " color-on-scroll="500">
+              
+          </nav>
+
+          <!-- End Navbar -->
+          <div class="content">
+              <div class="container-fluid">
+                  <div class="section">
+                      {% block content %}
+                      {% endblock %}
+                  </div>
+              </div>
+          </div>
+      </div>
+
+    </body>
+</html>

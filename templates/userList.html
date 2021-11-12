@@ -1,0 +1,55 @@
+{% extends "nav.html" %}
+
+{% block content %}
+<head>
+    <style>
+        .table{
+            width: 1400px;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <center>
+      <h1>List Of Users</h1>
+      <br>
+      <div class="table">
+        <input class="form-control" id="myInput" type="text" placeholder="Search.." width="1400px">
+        <br>
+    <table class="table table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Full Name</th>
+            <th scope="col">E- Mail ID</th>
+            <th scope="col">Department</th>
+          </tr>
+        </thead>
+        <tbody id="myTable">
+        {% for row in data %}
+          <tr>
+
+            <td>{{row[0]}}</td>
+            <td>{{row[1]}}</td>
+            <td>{{row[2]}}</td>
+            <td>{{row[3]}}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    </center>
+
+    <script>
+      $(document).ready(function(){
+        $("#myInput").on("keyup", function() {
+          var value = $(this).val().toLowerCase();
+          $("#myTable tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+          });
+        });
+      });
+      </script>
+</body>
+
+{% endblock %}
