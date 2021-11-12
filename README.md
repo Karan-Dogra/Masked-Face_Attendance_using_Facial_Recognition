@@ -1,5 +1,4 @@
 # Masked Face Attendance 
-By Aparnam Saini, Issha Sethi, Karan Dogra, Kriti Singh, Rohini Sharma
 
 # Objective
 
